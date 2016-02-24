@@ -52,9 +52,9 @@ function bmi() {
 
 function mortgage() {
 	var loan = document.getElementById('mortgage-loan').value;
-	var apr = document.getElementById('mortgage-apr').value;
+	var apr = document.getElementById('mortgage-apr').value/1200;
 	var term = document.getElementById('mortgage-term').value;
-	var calculate = loan*(apr/100)*(Math.pow((1+(apr/100)),(term/12)))/((Math.pow((1+(apr/100)),(term/12)))-1);
+	var calculate = loan*apr*(Math.pow((1+apr),(term/12)))/((Math.pow((1+apr),(term/12)))-1);
 	activeAns(4);
 	document.getElementById("mortgage-answer-alert").innerHTML = calculate/12;
 }
